@@ -9,11 +9,7 @@ export const Content = styled.div`
     text-align: center;
     font-size: 2rem;
     flex-wrap: wrap;
-    align-content: center;
+    display: flex;
+    justify-content: center;
 
-    hr {
-        border-top: 1px solid #8c8b8b;
-        margin-top: 4rem;
-        width: 50%;
-    }
 `;
