@@ -6,8 +6,6 @@ export default function Header(){
         <Container>
             <Content>
                 <p>G E T - MY G U E S T S</p>
-                <hr />
-                <Menu />
             </Content>
         </Container>
     )
