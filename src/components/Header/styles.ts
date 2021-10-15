@@ -1,16 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
+    margin-top: 2rem;
 `; 
 
 export const Content = styled.div`
-    
-    margin-top: 2rem;
-    padding: 4rem;
-    text-align: center;
-    font-size: 2rem;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
 
+    img {
+        padding: 3rem;
+        margin: 0 auto;
+        display: block;
+    }
 `;
