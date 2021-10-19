@@ -10,5 +10,6 @@ export const Content = styled.div`
         padding: 3rem;
         margin: 0 auto;
         display: block;
+        width: 50%;
     }
 `;

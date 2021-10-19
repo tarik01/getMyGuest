@@ -24,6 +24,6 @@ body{
     margin: 0 auto;
     padding: 0 20px 50px;
     border-radius: 20px;
-    background: #e6e6e6;
+    background: #e8d39c;
 }
 `

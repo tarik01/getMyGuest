@@ -12,12 +12,12 @@ export default function Menu(){
                     Meus Eventos
                 </li>
                 <li>
-                <img src={GuestsImg} alt='Meus Eventos' />
+                <img src={GuestsImg} alt='Meus Convidados' />
                     Meus Convidados
                 </li>
                 <li>
-                    <img src={QRCodeImg} alt='Meus Eventos' />
-                    Ler QRCode
+                    <img src={QRCodeImg} alt='Check-in' />
+                    Check-in
                 </li>
             </ul>
         </MenuList>
