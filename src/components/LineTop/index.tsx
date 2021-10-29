@@ -1,5 +1,5 @@
 import { Container } from './styles';
-import LineTopImg from '../../assets/line_top.png';
+import LineTopImg from '../../assets/line_top.svg';
 
 export default function LineTop () {
     return (

@@ -7,9 +7,11 @@ export default function EventItem () {
     return(
         <Container>
             <img src='https://www.viewhotels.jp/asakusa-annex/wp-content/uploads/sites/6/2020/03/test-img-300x196.jpg' alt='title' />
-            <p>{'title'.toUpperCase()}</p>
+            <h2>{'title'.toUpperCase()}</h2>
             <div className='action-buttons'>
-                <img src={ListImg} alt='Ver Lista de Convidados' />
+                <div>
+                    <img src={ListImg} alt='Ver Lista de Convidados' /><span>Ver Lista</span>
+                </div>
                 <img src={AddImg} alt='Adicionar Convidado(s)' />
                 <img src={DeleteImg} alt='Deletar Evento' />
             </div>

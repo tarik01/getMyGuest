@@ -3,28 +3,25 @@ import styled from 'styled-components';
 export const Container = styled.li`
 
     list-style: none;
-    background: #f5f5f5;
-    
-    &:hover{
-        transform: scale(1.05);
-        
-    }
+    border: 1px solid var(--secondary-color);
+    border-radius: 0 0 10px 10px;
 
     img {
         display: block;
         margin: 0 auto;
         width: 100%;
-        max-width: 270px;
-        max-height: 176px;
+        max-width: 30rem;
+        max-height: 17.6rem;
     }
-    p {
-        font-size: 1rem;
+    h2 {
+        text-align: center;
+        font-size: 2rem;
         padding: 1rem;
     }
 
     .action-buttons{
         margin: 0 auto;
-        max-width: 270px;
+        max-width: 30rem;
         img {
             cursor: pointer;
             width: 2rem;

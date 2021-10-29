@@ -11,9 +11,7 @@ export default function App() {
       <Header />
       <GlobalStyle />
       <Menu />
-      <LineTop />
       <Events />
-      <LineBottom />
     </>
     );
 };
