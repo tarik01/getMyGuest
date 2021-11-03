@@ -3,14 +3,18 @@ import AddImg from '../../assets/images/actions/add.png'
 
 interface PageHeaderProps {
     title: string;
-    img_description: string;
+    image_placeholder: string;
+    search_placeholder: string;
 }
 
-export default function PageHeader({ title, img_description }: PageHeaderProps) {
+export default function PageHeader({ title, image_placeholder, search_placeholder }: PageHeaderProps) {
   return (
       <Header>
             <h1>{title}</h1>
-            <img src={AddImg} alt={img_description} />
+            <div className="guest-bar">
+              <input type="search" placeholder={search_placeholder} />
+              <img src={AddImg} alt={image_placeholder} data-tip={image_placeholder} />
+            </div>
       </Header>
   );
 }

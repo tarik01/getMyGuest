@@ -1,7 +1,7 @@
 import { MenuList } from "./styles";
 import GuestsImg from "../../assets/guests.svg"
 import PartyImg from "../../assets/party.svg"
-import QRCodeImg from "../../assets/qrcode.svg"
+import QRCodeImg from "../../assets/checkin.svg"
 
 export default function Menu(){
     return(

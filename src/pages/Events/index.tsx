@@ -5,7 +5,11 @@ import { Container } from './styles'
 export default function Events () {
     return (
         <Container >
-            <PageHeader title="Meus Eventos" img_description="Adicionar Evento" />
+            <PageHeader 
+                title="Meus Eventos"
+                search_placeholder="Buscar Evento" 
+                image_placeholder="Adicionar Evento"
+            />
             <EventList />
         </Container>
     )

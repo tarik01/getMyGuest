@@ -15,13 +15,13 @@ export const MenuList = styled.nav`
 
         li {
             display: inline-block;
-            padding: 15px;
-            border-radius: 15px;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
             transition: background 0.2s;
             background: #fff;
             cursor: pointer;
             vertical-align: middle;
-            font-size: 0.8rem;
+            font-size: 1.5rem;
             text-align: center;
 
             &:hover {
@@ -29,8 +29,8 @@ export const MenuList = styled.nav`
             }
 
             img {
-                width: 64px;
-                height: 64px;
+                width: 6.4rem;
+                height: 6.4rem;
                 display: block;
                 float: center;
                 margin: 0 auto;

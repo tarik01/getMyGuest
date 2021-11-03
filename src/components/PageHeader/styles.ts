@@ -1,17 +1,27 @@
 import styled from "styled-components";
 
 export const Header = styled.div`
-    /* display: flex; */
     text-align: center;
-    margin-top: 3rem;
-    
-    h1{
-        font-family: 'Indie Flower', cursive, sans-serif;
-        font-size: 3rem;
-    }
+    padding: 1rem;
 
-    img:hover{
-        cursor: pointer;
-        transform: scale(1.05);
+    .guest-bar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+
+        input[type="search"] {
+            width: 100%;
+            border: none;
+            height: 4rem;
+            border-radius: 0.5rem;
+            text-align: right;
+            font-size: 1.5rem;
+            padding-right: 1rem;
+        }
+
+        img {
+            cursor: pointer;
+        }
     }
 `
