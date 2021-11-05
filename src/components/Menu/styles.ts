@@ -8,10 +8,14 @@ export const MenuList = styled.nav`
         padding: 0px;
         margin: 0px;
         list-style-type: none;
-        align-items: center;
-        display:grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+        grid-template-columns: repeat(4, minmax(11.5rem, 1fr));
         gap: 1rem;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, minmax(11.5rem, 1fr));
+        }
 
         li {
             display: inline-block;

@@ -9,8 +9,8 @@ import { Container } from './styles/app';
 export default function App() {
   return (
     <Container>
-      <Header />
       <GlobalStyle />
+      <Header />
       <Menu />
       <Events />
       <ReactTooltip />

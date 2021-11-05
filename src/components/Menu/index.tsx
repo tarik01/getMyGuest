@@ -19,6 +19,10 @@ export default function Menu(){
                     <img src={QRCodeImg} alt='Check-in' />
                     Check-in
                 </li>
+                <li>
+                    <img src={QRCodeImg} alt='Check-in' />
+                    Check-in
+                </li>
             </ul>
         </MenuList>
     );

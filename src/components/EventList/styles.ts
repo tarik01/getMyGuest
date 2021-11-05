@@ -6,8 +6,4 @@ export const Container = styled.ul`
     padding-top: 3rem;
     gap: 30px;
     width: 100%;
-
-    @media (max-width: 485px) {
-        grid-template-columns: repeat(auto-fill, 1fr);
-    }
 `
