@@ -22,6 +22,8 @@ export const Header = styled.div`
 
         img {
             cursor: pointer;
+            width: 4.5rem;
+            margin-left: 0.5rem;
         }
     }
 `

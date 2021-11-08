@@ -9,13 +9,9 @@ export const MenuList = styled.nav`
         margin: 0px;
         list-style-type: none;
         display: grid;
-        grid-template-columns: repeat(4, minmax(11.5rem, 1fr));
-        gap: 1rem;
-        align-items: center;
-
-        @media (max-width: 768px) {
-            grid-template-columns: repeat(2, minmax(11.5rem, 1fr));
-        }
+        grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));
+        max-width: 80%;
+        gap: var(--gap);
 
         li {
             display: inline-block;
@@ -28,10 +24,6 @@ export const MenuList = styled.nav`
             font-size: 1.5rem;
             text-align: center;
 
-            &:hover {
-                background: #ccc;
-            }
-
             img {
                 width: 6.4rem;
                 height: 6.4rem;
@@ -39,6 +31,14 @@ export const MenuList = styled.nav`
                 float: center;
                 margin: 0 auto;
                 padding: 0.5rem;
+            }
+
+            &.my-account {
+                background: var(--yellow);
+            }
+
+            &:hover {
+                background: var(--secondary-color);
             }
         }
     }

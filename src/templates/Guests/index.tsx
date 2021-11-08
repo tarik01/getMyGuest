@@ -1,14 +1,16 @@
+import GuestList from '../../components/GuestList';
 import PageHeader from '../../components/PageHeader';
-import { Container } from './styles';
+import { PageContainer } from '../styles';
 
 export default function Guests () {
   return (
-      <Container >
+      <PageContainer >
           <PageHeader 
-            title="Meus Convidados"
+            title="Convidados"
             search_placeholder="Buscar Convidado" 
             image_placeholder="Adicionar Convidado"
           />
-      </Container>
+          <GuestList />
+      </PageContainer>
   )
 }

@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     --white-color: #ffffff;
     --light-gray-color: #ccc;
     --secondary-color: #F3F7EF;
+    --yellow: yellow;
     --gap: 3rem;
 }
 html{
@@ -24,7 +25,8 @@ body{
     background: var(--primary-color);
     background-image: url(${BackgroundImg});
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 100%;
+    height: 100vh;
 }
 
 h1 {
@@ -40,14 +42,16 @@ h1, h2{
     font-family: 'Zen Kurenaido', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
 #root {
     max-width: 1020px;
     margin: 0 auto;
     padding: 0 20px 50px;
     border-radius: 20px;
-}
-@media (max-width: 484px) {
-
 }
 
 

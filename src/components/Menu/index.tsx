@@ -1,27 +1,40 @@
 import { MenuList } from "./styles";
-import GuestsImg from "../../assets/guests.svg"
-import PartyImg from "../../assets/party.svg"
-import QRCodeImg from "../../assets/checkin.svg"
+import GuestsImg from "../../assets/images/icons/guests.svg"
+import PartyImg from "../../assets/images/icons/party.svg"
+import CheckinImg from "../../assets/images/icons/checkin.svg"
+import QRCodeImg from "../../assets/images/icons/qrcode.svg"
+import MyAccountImg from "../../assets/images/icons/myaccount.svg"
+import { Link } from "react-router-dom";
 
 export default function Menu(){
     return(
         <MenuList>
             <ul>
                 <li>
-                    <img src={PartyImg} alt='Meus Eventos' />
-                    Meus Eventos
+                    <Link to="/events">
+                        <img src={PartyImg} alt='Meus Eventos' />
+                        Meus Eventos
+                    </Link>
                 </li>
                 <li>
-                <img src={GuestsImg} alt='Meus Convidados' />
-                    Meus Convidados
+                    <Link to="/guests">
+                        <img src={GuestsImg} alt='Convidados' />
+                        Convidados
+                    </Link>
                 </li>
                 <li>
-                    <img src={QRCodeImg} alt='Check-in' />
-                    Check-in
+                    <Link to="/checkin">
+                        <img src={CheckinImg} alt='Check-in' />
+                        Check-in
+                    </Link>
                 </li>
                 <li>
-                    <img src={QRCodeImg} alt='Check-in' />
-                    Check-in
+                    <img src={QRCodeImg} alt='Gerar QRCode' />
+                    Gerar QRCode
+                </li>
+                <li className="my-account">
+                    <img src={MyAccountImg} alt='Minha Conta' />
+                    Minha Conta
                 </li>
             </ul>
         </MenuList>

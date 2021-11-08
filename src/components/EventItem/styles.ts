@@ -4,36 +4,54 @@ export const Container = styled.li`
 
     list-style: none;
     border: 1px solid var(--primary-color);
-    border-radius: 0 0 10px 10px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    transition: all 0.2s;
+    
 
     img {
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-        max-width: 100vw;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        padding: 1rem;
     }
     h2 {
         text-align: center;
         font-size: 2rem;
-        padding: 1rem;
         text-transform: capitalize;
+    }
+    p {
+        font-size: 1.2rem;
     }
 
     .action-buttons{
-        margin: 0 auto 1rem;
-        max-width: 100vw;
-        padding: 0 1rem 2rem 1rem;
+        height: max-content;
 
         img {
             cursor: pointer;
-            width: 2.5rem;
-            height: 2.5rem;
-            float: left;
-
-            &:last-of-type {
-                float: right;
-            }
+            max-width: 4rem;
+            max-height: 4rem;
         }
         
+    }
+    
+    .picture {
+        max-width: 12.5rem;
+    }
+
+    .informations{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &:hover {
+        background: var(--primary-color);
     }
 `
