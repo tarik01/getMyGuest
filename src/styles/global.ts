@@ -54,5 +54,9 @@ a {
     border-radius: 20px;
 }
 
+img:hover {
+    cursor: pointer;
+}
+
 
 `
