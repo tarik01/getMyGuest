@@ -4,13 +4,12 @@ import { Container } from './styles';
 export default function EventList(){
     return (
         <Container>
-            <EventItem />
-            <EventItem />
-            <EventItem />
-            <EventItem />
-            <EventItem />
-            <EventItem />
-            <EventItem />
+            <li><EventItem /></li>
+            <li><EventItem /></li>
+            <li><EventItem /></li>
+            <li><EventItem /></li>
+            <li><EventItem /></li>
+            <li><EventItem /></li>
         </Container>
     )
 }

@@ -1,17 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.li`
+export const Container = styled.div` 
 
-    list-style: none;
-    border: 1px solid var(--primary-color);
-    border-radius: 1rem;
     display: flex;
     align-items: center;
     padding: 1rem;
     width: 100%;
     text-align: center;
     justify-content: space-between;
-    transition: all 0.2s;
     
 
     img {
@@ -49,9 +45,5 @@ export const Container = styled.li`
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    &:hover {
-        background: var(--primary-color);
     }
 `

@@ -20,38 +20,49 @@ export const PageContainer = styled.div`
         }
 
         .section {           
-            text-align: center;
             border-radius: 1.5rem;
             border: 1px solid var(--primary-color);
         }
 
         .section-header {
+            text-align: center;
             background: var(--primary-color);
             border-radius: 1.5rem 1.5rem 0 0;
         }
 
-        .section-content{
-            font-size: 2rem;
-        }
-
-        .by-checkin-number {
+        .content-inside {
             padding: 1rem;
             display: flex;
             flex-wrap: nowrap;
+            align-items: center;
 
             img {
                 max-width: 3rem;
             }
 
-            input {
-                font-size: 1.6rem;
-                height: 3rem;
-                text-align: center;
-                border: none;
-                width: 100%;
-                margin-right: 0.2rem;
-                border-radius: 0.5rem;
-            }
-        }          
+        }
+
+        input[type="text"], button {
+            font-size: 1.6rem;
+            height: 4rem;
+            text-align: center;
+            border: none;
+            width: 100%;
+            margin-right: 0.2rem;
+            border-radius: 0.5rem;
+        }
+
+        button, input[type="checkbox"] {
+            cursor: pointer;
+        }
+/* 
+        input[type="checkbox"] {
+            height: 4rem;
+            width: 4rem;
+        } */
+        
+        label {
+            font-size: 1.6rem;
+        }
     }
 `

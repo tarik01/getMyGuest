@@ -26,7 +26,6 @@ body{
     background-image: url(${BackgroundImg});
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 100vh;
 }
 
 h1 {

@@ -6,4 +6,14 @@ export const Container = styled.ul`
     padding-top: 3rem;
     gap: var(--gap);
     width: 100%;
+
+    li {
+        list-style: none;
+        border: 1px solid var(--primary-color);
+        border-radius: 1rem;
+        
+        &:hover {
+            background: var(--primary-color);
+        }
+    }
 `
