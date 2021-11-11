@@ -1,6 +1,9 @@
-import PageHeader from '../../components/PageHeader'
 import ConfirmImg from '../../assets/images/actions/confirm.svg'
+
+import PageHeader from '../../components/PageHeader'
 import { PageContainer } from '../styles'
+import { CheckinContainer } from './styles'
+
 import EventItem from '../../components/EventItem'
 import GuestItem from '../../components/GuestItem'
 import ToggleSwitch from '../../components/ToggleSwitch'
@@ -8,10 +11,8 @@ import ToggleSwitch from '../../components/ToggleSwitch'
 export default function Events () {
     return (
         <PageContainer >
-            <PageHeader 
-                title="Check-In"
-            />
-            <div className="page-content">
+            <PageHeader title="Check-In"/>
+            <CheckinContainer>
                 <section>
                     <div className="section">
                         <div className="section-header">
@@ -32,28 +33,27 @@ export default function Events () {
                         </div>
                         <div className="section-content">
                             <EventItem />
-                            <button>Selecionar Evento</button>
+                            <button id="select_event">Selecionar Evento</button>
                         </div>
                         <div className="section-content">
                             <GuestItem />
-                            <button>Selecionar Convidado</button>
+                            <button id="select_guest">Selecionar Convidado</button>
                         </div>
                         <div className="section-content">
                             <div className="content-inside">
-                                <label htmlFor="add">
+                                <span>
                                     Adicionar convidado automaticamente na lista de convidados?
-                                </label>
+                                </span>
                                 <ToggleSwitch />
-                                {/* <input type="checkbox" 
-                                    alt="Adicionar convidado automaticamente na lista de convidados?" 
-                                    value="add" 
-                                    id="add"
-                                /> */}
                             </div>
+                        </div>
+                        <div className="section-content confirm-container">
+                            <button><span>Confirmar Check-In</span> <img src={ConfirmImg} alt="Confirmar Check-In"/></button>
+                            
                         </div>
                     </div>
                 </section>
-            </div>
+            </CheckinContainer>
         </PageContainer>
     )
 }

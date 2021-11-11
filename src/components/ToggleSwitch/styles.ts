@@ -1,52 +1,76 @@
 import styled from "styled-components"; 
 
-export const ToogleContainer = styled.div`
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #e8f5f7;
-    height: 1.5rem;
-    width: 1.5rem;
-    
-    input[type="checkbox"] {
-        width: 0;
-        height: 0;
-        visibility: hidden;
-    }
+// Adapted from https://codepen.io/nghh/pen/abWKXEK
 
+export const ToogleContainer = styled.div`
+    --height: 2rem;
+    --width: 4rem;
+    --border: 0.15rem;
+    --switch-color-checked: darkcyan;
+    --switch-color-unchecked: lightgrey;
+    --dot-color-checked: white;
+    --dot-color-unchecked: white;
 
     label {
         display: block;
-        width: 5rem;
-        height: 1.5rem;
-        background: #477a85;
-        border-radius: 1rem;
         position: relative;
         cursor: pointer;
-        transition: 0.5s;
-        box-shadow: 0 0 2rem #477a8550;
+        padding-left: calc(var(--width) + 1em);
+        min-width: var(--width);
+        min-height: var(--height);
 
-        &::after{
+        &::before,
+        &::after {
             content: "";
-            width: 1.2rem;
-            height: 1.2rem;
-            background: #e8f5f7;
             position: absolute;
-            border-radius: 0.7rem;
-            top: 1.5rem;
-            left: 1.5rem;
-            transition: 0.5s;
+            top: 0;
+            left: 0;
+            transition: 0.25s ease-in-out;
+            box-sizing: border-box;
+        }
+        &::before {
+            z-index: 1;
+            background-color: var(--switch-color-unchecked);
+            width: var(--width);
+            height: var(--height);
+            border-radius: calc(var(--height) * 0.5);
+            box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.2);
         }
 
-        &:active:after{
-            width: 1.6rem;
+        /* Dot */
+        &::after {
+            z-index: 2;
+            background-color: var(--dot-color-unchecked);
+            height: calc(var(--height) - (var(--border) * 2));
+            width: calc(var(--height) - (var(--border) * 2));
+            transform: translate(var(--border), var(--border));
+            border-radius: calc(var(--height) / 2);
+        }
+
+        &:active::after {
+            width: calc(var(--height) * 1.2);
+            max-width: calc(var(--height) * 2);
         }
     }
 
-    input[type="checkbox"]:checked + label {
-        left: calc(100% - 1rem);
-        transform: translateX(-100%);
-        background: #243d42; ;
+    input {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        display: none;
+
+        &:checked + label {
+            &::before {
+                transition: 0.5s;
+                background-color: var(--switch-color-checked);
+            }
+            &::after {
+                transform: translate(
+                    calc(var(--width) - 100% - var(--border)),
+                    var(--border)
+                );
+                background-color: var(--dot-color-checked);
+            }
+        }
     }
 `

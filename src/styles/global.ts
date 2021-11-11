@@ -41,6 +41,10 @@ h1, h2{
     font-family: 'Zen Kurenaido', sans-serif;
 }
 
+button{
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
     color: #000;

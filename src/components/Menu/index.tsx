@@ -29,12 +29,16 @@ export default function Menu(){
                     </Link>
                 </li>
                 <li>
-                    <img src={QRCodeImg} alt='Gerar QRCode' />
-                    Gerar QRCode
+                    <Link to="/qrcode">
+                        <img src={QRCodeImg} alt='Gerar QRCode' />
+                        Gerar QRCode
+                    </Link>
                 </li>
                 <li className="my-account">
-                    <img src={MyAccountImg} alt='Minha Conta' />
-                    Minha Conta
+                    <Link to="/myaccount">
+                        <img src={MyAccountImg} alt='Minha Conta' />
+                        Minha Conta
+                    </Link>
                 </li>
             </ul>
         </MenuList>
