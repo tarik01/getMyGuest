@@ -7,8 +7,6 @@ export default function Events () {
         <PageContainer >
             <PageHeader 
                 title="Meus Eventos"
-                search_placeholder="Buscar Evento" 
-                image_placeholder="Adicionar Evento"
             />
             <EventList />
         </PageContainer>

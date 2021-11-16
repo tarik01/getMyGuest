@@ -7,8 +7,6 @@ export default function Guests () {
       <PageContainer >
           <PageHeader 
             title="Convidados"
-            search_placeholder="Buscar Convidado" 
-            image_placeholder="Adicionar Convidado"
           />
           <GuestList />
       </PageContainer>

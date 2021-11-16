@@ -8,12 +8,14 @@ export const MenuList = styled.nav`
         padding: 0px;
         margin: 0px;
         list-style-type: none;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));
-        max-width: 80%;
+        display: flex;
         gap: var(--gap);
+        flex-wrap: wrap;
+        justify-content: center;
 
         li {
+            width: 12rem;
+            height: 12rem;
             display: inline-block;
             padding: 1.5rem;
             border-radius: 1.5rem;

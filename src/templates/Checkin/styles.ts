@@ -30,6 +30,7 @@ export const CheckinContainer = styled.div`
         flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;
+        padding: 1rem;
 
         img {
             max-width: 3rem;
@@ -45,6 +46,13 @@ export const CheckinContainer = styled.div`
         width: 100%;
         margin-right: 0.2rem;
         border-radius: 0.5rem;
+    }
+    input[type="text"] {
+        text-transform: uppercase;
+
+        &::placeholder{
+            text-transform: none;
+        }
     }
 
     button:hover {
@@ -67,4 +75,22 @@ export const CheckinContainer = styled.div`
             max-width: 2rem;
         }
     }
+
+    .selected {
+        background: var(--primary-color);
+        border-radius: 2rem;
+        margin: 1rem 0;
+        text-align: center;
+
+        span {
+            float: right;
+            margin-top: -3rem;
+            margin-right: 2rem;
+        }
+    }
+    .change-hover{
+        min-width: 30rem;
+        min-height: 30rem;
+    }
+
 `

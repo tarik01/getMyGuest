@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div` 
-
     display: flex;
     align-items: center;
     padding: 1rem;
     width: 100%;
-    text-align: center;
-    justify-content: space-between;
-    
-
-    img {
+    justify-content: center;   
+  
+    .picture img {
         width: 12rem;
         height: 12rem;
         border-radius: 50%;
@@ -25,13 +22,18 @@ export const Container = styled.div`
         font-size: 1.2rem;
     }
 
-    .action-buttons{
+    .action-buttons{   
         height: max-content;
+        margin-top: 0.5rem;
 
         img {
             cursor: pointer;
-            max-width: 4rem;
-            max-height: 4rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        a:not(:last-child) {
+            margin-right: 1rem;
         }
         
     }
@@ -41,7 +43,6 @@ export const Container = styled.div`
     }
 
     .informations{
-        width: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;

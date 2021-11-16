@@ -7,8 +7,8 @@ export default function MyAccount() {
     <PageContainer>
       <PageHeader title="Minha Conta" />
       <MyAccountContainer>
-        <div className="picture">
-          <img src="https://picsum.photos/150/150" alt="Foto de Fulano de Tal" />
+        <div>
+          <img src="https://picsum.photos/150/150" alt="Foto de Fulano de Tal" className="rounded-circle"/>
         </div>
         <div className="informations">
             <h2>Fulano de Tal</h2>

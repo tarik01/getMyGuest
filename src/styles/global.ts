@@ -61,5 +61,9 @@ img:hover {
     cursor: pointer;
 }
 
+.rounded-circle {
+    border-radius: 50%;
+}
+
 
 `
