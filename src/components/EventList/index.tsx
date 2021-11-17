@@ -7,7 +7,7 @@ export default function EventList(){
         <div>
             <SearchAndAddBar
                 searchPlaceholder="Pesquisar Evento"
-                imageAddPlaceholder="Adicionar"
+                imageAddPlaceholder="Novo Evento"
             />
             <List>
                 <li>

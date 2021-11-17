@@ -7,12 +7,4 @@ export const Container = styled.div`
     border-radius: 2rem;
     margin-top: 1rem;
     
-    button {
-        width: 100%;
-        padding: 1rem;
-        margin-top: 1rem;
-    }
-    h2 {
-        margin-bottom: 1.5rem;
-    }
 `

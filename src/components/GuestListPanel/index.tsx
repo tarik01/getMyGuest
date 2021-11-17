@@ -5,7 +5,9 @@ export default function GuestListPanel() {
     return(
         <Container>
             <h2>Lista de Convidados</h2>
-            <GuestList />
+            <div className="bg-primary">
+                <GuestList eventId={1} />
+            </div>
         </Container>
     )
 }

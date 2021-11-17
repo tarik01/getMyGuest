@@ -1,8 +1,13 @@
+import DeleteImg from '../../assets/images/actions/delete.svg'
 import { List } from './styles';
 import GuestItem from '../GuestItem';
 import SearchAndAddBar from '../SearchAndAddBar';
 
-export default function GuestList () {
+interface SearchAndAddBarProps {
+    eventId?: number;
+}
+
+export default function GuestList ({ eventId }: SearchAndAddBarProps) {
     return (
         <div>
             <SearchAndAddBar
@@ -11,10 +16,12 @@ export default function GuestList () {
             />
             <List>
                 <li>
+                    {eventId &&
+                    <img src={DeleteImg} alt="Remover Convidado da Lista" data-tip="Remover Convidado da Lista" className="remove-from-list"/>}
                     <GuestItem 
                         name="Fulano da Silva"
                         cpf="000.000.000-00"
-                        actionButton={true}
+                        actionButton={eventId ? false : true}
                     />
                 </li>
             </List>

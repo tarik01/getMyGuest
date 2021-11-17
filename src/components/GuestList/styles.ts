@@ -7,14 +7,21 @@ export const List = styled.ul`
     
     gap: var(--gap);
 
-    li {
+    & li {
+        position: relative;
         list-style-type: none;
-        padding: 1rem;
         border: 1px solid var(--primary-color);
         border-radius: 1rem;
 
         &:hover {
             background: var(--primary-color);
+        }
+        
+        .remove-from-list {
+            position: absolute;
+            float: right;
+            top: 1rem;
+            right: 1rem;
         }
     }
 `
