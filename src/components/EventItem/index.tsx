@@ -1,4 +1,4 @@
-import { Container } from './styles';
+import { EventItemContainer } from './styles';
 import OpenImg from '../../assets/images/actions/open.svg'
 import AddImg from '../../assets/images/actions/add-guest.svg'
 import ListImg from '../../assets/images/actions/list.svg'
@@ -17,7 +17,7 @@ interface EventItemProps {
 
 export default function EventItem ({id, title, date, cover, description, location, actionButton=false}: EventItemProps) {
     return(
-        <Container>
+        <EventItemContainer>
             <div className="picture">
                 <img src='https://picsum.photos/360/360' alt='title' />
             </div>
@@ -35,6 +35,6 @@ export default function EventItem ({id, title, date, cover, description, locatio
                 }
             </div>
             
-        </Container>
+        </EventItemContainer>
     )
 }

@@ -1,13 +1,13 @@
 import GuestList from '../GuestList';
-import { Container } from './styles';
+import { GuestListPanelContainer } from './styles';
 
 export default function GuestListPanel() {
     return(
-        <Container>
-            <h2>Lista de Convidados</h2>
+        <GuestListPanelContainer>
+            <h2 className="title">Lista de Convidados</h2>
             <div className="bg-primary">
                 <GuestList eventId={1} />
             </div>
-        </Container>
+        </GuestListPanelContainer>
     )
 }

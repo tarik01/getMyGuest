@@ -1,19 +1,27 @@
 import styled from 'styled-components';
 
+export const EventInfoPanelContainer = styled.div`
+    & p {
+        font-size: var(--default);
+    }
+
+    .iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: var(--border-radius-default);
+    }
+`;
+
 export const MainPanel = styled.div`
     display: flex;
-    align-self: auto;
     justify-content: center;
     align-items: center;
     gap: var(--gap);
-    padding: 2rem;
     flex-wrap: wrap;
-    font-size: 1.6rem;
-
-    div {
-        min-height: 50%;
-    }
-    
+    font-size: var(--default);
+    margin-bottom: 2rem;
+   
     .informations {
         text-align: center;
         span {
@@ -23,18 +31,18 @@ export const MainPanel = styled.div`
     }
 `;
 
-export const Container = styled.div`
-    p {
-        font-size: 1.6rem;
-    }
-`;
-
 export const DescriptionPanel = styled.div`
     padding: 1rem;
     text-align: center;
-    p {
-        padding: 1rem;
-    }
     background: var(--primary-color);
     border-radius: 2rem;
+    margin-top: 1rem;
+    width: 100%;
+
+    & p {
+        padding: 1rem;
+    }
+    & h2 {
+        margin-bottom: 1rem;
+    }
 `;

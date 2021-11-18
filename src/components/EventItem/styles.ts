@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div` 
+export const EventItemContainer = styled.div` 
     display: flex;
     align-items: center;
     padding: 1rem;
@@ -19,7 +19,7 @@ export const Container = styled.div`
         text-transform: capitalize;
     }
     p {
-        font-size: 1.2rem;
+        font-size: var(--small);
     }
 
     .action-buttons{   
@@ -28,8 +28,8 @@ export const Container = styled.div`
 
         img {
             cursor: pointer;
-            width: 1.5rem;
-            height: 1.5rem;
+            width: var(--medium-icon);
+            height: var(--medium-icon);
         }
 
         a:not(:last-child) {

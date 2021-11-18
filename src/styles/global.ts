@@ -14,6 +14,20 @@ export const GlobalStyle = createGlobalStyle`
     --secondary-color: #F3F7EF;
     --yellow: yellow;
     --gap: 3rem;
+
+    /* font-size */
+    --small: 1.2rem;
+    --default: 1.6rem;
+    --medium: 2rem;
+    --big: 2.4rem;
+
+    /* icons size */
+    --small-icon: 1.2rem;
+    --medium-icon: 1.5rem;
+    --big-icon: 2.2rem;
+
+    --border-radius-default: 2rem;
+
 }
 html{
     font-size: 62.5%;
