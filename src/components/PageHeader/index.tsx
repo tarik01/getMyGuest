@@ -1,13 +1,13 @@
 import { Header } from './styles';
 
 interface PageHeaderProps {
-    title: string;
+  title: string;
 }
 
 export default function PageHeader({ title }: PageHeaderProps) {
   return (
-      <Header>
-            <h1>{title}</h1>
-      </Header>
+    <Header>
+      <h1>{title}</h1>
+    </Header>
   );
 }

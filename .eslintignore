@@ -1,0 +1,5 @@
+node_modules
+build
+/*.js
+**/*.js
+/src/react-app-env.d.ts
