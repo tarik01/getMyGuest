@@ -9,7 +9,7 @@ import EventItem from '../../components/EventItem';
 import GuestItem from '../../components/GuestItem';
 import ToggleSwitch from '../../components/ToggleSwitch';
 
-export default function Events() {
+export default function Checkin() {
   return (
     <PageContainer>
       <PageHeader title="Check-In" />
@@ -50,6 +50,7 @@ export default function Events() {
                   src={EditImg}
                   alt="Alterar Evento"
                   data-tip="Alterar Evento"
+                  className="icon-big"
                 />
               </span>
               {/* <button id="select_event">Selecionar Evento</button> */}
@@ -65,6 +66,7 @@ export default function Events() {
                   src={EditImg}
                   alt="Alterar Convidado"
                   data-tip="Alterar Convidado"
+                  className="icon-big"
                 />
               </span>
               {/* <button id="select_guest">Selecionar Convidado</button> */}

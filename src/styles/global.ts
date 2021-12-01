@@ -78,5 +78,8 @@ img:hover {
 .rounded-circle {
     border-radius: 50%;
 }
+.icon-big {
+    width: var(--big-icon);
+}
 
 `;

@@ -24,7 +24,8 @@ export const MainPanel = styled.div`
 
   .informations {
     text-align: center;
-    span {
+
+    & span {
       color: blue;
       cursor: pointer;
     }
