@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const EventInfoPanelContainer = styled.div`
+export const PartyInfoPanelContainer = styled.div`
   & p {
     font-size: var(--default);
   }

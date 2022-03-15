@@ -27,3 +27,18 @@ export interface Checkin {
   date: Date;
   status?: string;
 }
+
+export interface Party {
+  id: number;
+  name: string;
+  description?: string;
+  date: Date;
+  time: string;
+  location?: string;
+  locationUrl?: string;
+  image?: string;
+  status?: number;
+  type?: number;
+  guests?: Guest[];
+  actionButton?: boolean;
+}

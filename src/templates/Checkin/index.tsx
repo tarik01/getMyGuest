@@ -5,7 +5,7 @@ import PageHeader from '../../components/PageHeader';
 import { PageContainer } from '../styles';
 import { CheckinContainer } from './styles';
 
-import EventItem from '../../components/EventItem';
+import PartyItem from '../../components/PartyItem';
 import GuestItem from '../../components/GuestItem';
 import ToggleSwitch from '../../components/ToggleSwitch';
 
@@ -37,12 +37,13 @@ export default function Checkin() {
               <h2>Buscar</h2>
             </div>
             <div className="section-content selected">
-              <EventItem
+              <PartyItem
                 id={1}
-                title="Minha Festa"
+                name="Minha Festa"
                 description="Festa lá em casa"
-                date={new Date(2021, 10, 10)}
-                cover="https://picsum.photos/360/360"
+                date={new Date()}
+                time=""
+                image="https://picsum.photos/360/360"
                 location="Palmas"
               />
               <span>

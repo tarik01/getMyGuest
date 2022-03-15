@@ -11,7 +11,7 @@ export default function Menu() {
     <MenuList>
       <ul>
         <li>
-          <Link to="/events">
+          <Link to="/parties">
             <img src={PartyImg} alt="Meus Eventos" />
             Meus Eventos
           </Link>

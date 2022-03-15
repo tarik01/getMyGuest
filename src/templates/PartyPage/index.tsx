@@ -1,17 +1,17 @@
 import { PageContainer } from '../styles';
-import { EventContainer } from './styles';
+import { PartyContainer } from './styles';
 import PageHeader from '../../components/PageHeader';
-import EventInfoPanel from '../../components/EventInfoPanel';
+import PartyInfoPanel from '../../components/PartyInfoPanel';
 import GuestListPanel from '../../components/GuestListPanel';
 
-export default function EventPage() {
+export default function PartyPage() {
   return (
     <PageContainer>
       <PageHeader title="Dados do Evento" />
-      <EventContainer>
-        <EventInfoPanel />
+      <PartyContainer>
+        <PartyInfoPanel />
         <GuestListPanel />
-      </EventContainer>
+      </PartyContainer>
     </PageContainer>
   );
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const EventItemContainer = styled.div`
+export const PartyItemContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;

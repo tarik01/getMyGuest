@@ -1,8 +1,8 @@
-import EventList from '../../components/EventList';
+import EventList from '../../components/PartyList';
 import PageHeader from '../../components/PageHeader';
 import { PageContainer } from '../styles';
 
-export default function Events() {
+export default function Parties() {
   return (
     <PageContainer>
       <PageHeader title="Meus Eventos" />
