@@ -41,4 +41,5 @@ export interface Party {
   type?: number;
   guests?: Guest[];
   actionButton?: boolean;
+  createdBy?: string;
 }
