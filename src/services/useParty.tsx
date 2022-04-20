@@ -7,7 +7,11 @@ export async function getParties() {
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then(res => res.json());
+  })
+    .then(res => res.json())
+    .catch(() => {
+      throw new Error('Erro ao obter dados do servidor!');
+    });
   return parties;
 }
 
