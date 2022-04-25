@@ -27,7 +27,7 @@ export function UserContextProvider({
   children: React.ReactNode;
 }) {
   const [state, setState] = useState(DEFAULT_VALUE.state);
-  const value = useMemo(() => ({ state, setState }), []);
+  const value = useMemo(() => ({ state, setState }), [state]);
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
 export default UserContext;
