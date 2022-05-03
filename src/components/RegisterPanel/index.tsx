@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../services/useUser';
 import { RegistrarContainer } from './styles';
+import { validateEmail } from '../../util/util-fuctions';
 
 export default function RegistrarPanel() {
   const [email, setEmail] = useState('');
@@ -11,15 +12,6 @@ export default function RegistrarPanel() {
   const [success, setSuccess] = useState('');
 
   const navigate = useNavigate();
-
-  const validateEmail = (email_: string) => {
-    return String(email_)
-      .toLowerCase()
-      .match(
-        // eslint-disable-next-line max-len
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      );
-  };
 
   const handleRegister = async () => {
     setError('');

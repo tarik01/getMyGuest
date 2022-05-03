@@ -6,6 +6,15 @@ export const LoginContainer = styled.div`
   max-width: 32rem;
   width: 100%;
 
+  & .error {
+    color: red;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
   & form {
     display: flex;
     flex-direction: column;
@@ -25,6 +34,7 @@ export const LoginContainer = styled.div`
     margin-right: 0.2rem;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
+    padding: 0.5rem;
   }
 
   & .buttons {
