@@ -8,6 +8,7 @@ import { Container } from './styles/app';
 import Header from './components/Header';
 import Menu from './components/Menu';
 import GlobalRoutes from './routes';
+import GlobalContext from './context';
 
 export default function App() {
   const route = useLocation();
@@ -17,7 +18,7 @@ export default function App() {
   }, [route]);
 
   return (
-    <>
+    <GlobalContext>
       <GlobalStyle />
       <Container>
         <Header />
@@ -25,6 +26,6 @@ export default function App() {
         <GlobalRoutes />
         <ReactTooltip />
       </Container>
-    </>
+    </GlobalContext>
   );
 }
