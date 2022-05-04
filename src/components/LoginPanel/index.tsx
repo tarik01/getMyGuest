@@ -4,6 +4,7 @@ import UserContext from '../../context/user';
 import { LoginUser } from '../../services/useUser';
 import { LoginContainer } from './styles';
 import { validateEmail } from '../../util/util-fuctions';
+import { saveAuthentication } from '../../modules/userModel';
 
 export default function LoginPanel() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function LoginPanel() {
     if (localStorage.getItem('token')) {
       navigate('/myaccount');
     }
-  }, []);
+  }, [navigate]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setError('');
@@ -47,9 +48,7 @@ export default function LoginPanel() {
         email,
         token: loginAction.token,
       });
-      localStorage.clear();
-      localStorage.setItem('token', loginAction.token);
-      localStorage.setItem('email', email);
+      saveAuthentication(loginAction.token, email);
       navigate('/myaccount');
     }
   };

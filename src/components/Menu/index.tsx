@@ -5,6 +5,7 @@ import PartyImg from '../../assets/images/icons/party.svg';
 import CheckinImg from '../../assets/images/icons/checkin.svg';
 import QRCodeImg from '../../assets/images/icons/qrcode.svg';
 import MyAccountImg from '../../assets/images/icons/myaccount.svg';
+import LogoutImg from '../../assets/images/icons/logout.svg';
 
 export default function Menu() {
   return (
@@ -38,6 +39,12 @@ export default function Menu() {
           <Link to="/myaccount">
             <img src={MyAccountImg} alt="Minha Conta" />
             Minha Conta
+          </Link>
+        </li>
+        <li className="logout">
+          <Link to="/logout">
+            <img src={LogoutImg} alt="Logout" />
+            Sair
           </Link>
         </li>
       </ul>

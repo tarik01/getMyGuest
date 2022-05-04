@@ -6,17 +6,62 @@ import Parties from '../templates/Parties';
 import Guests from '../templates/Guests';
 import Checkin from '../templates/Checkin';
 import PartyPage from '../templates/PartyPage';
+import Logout from '../templates/Logout';
+import { PrivateRoute } from './private';
 
 export default function GlobalRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/parties" element={<Parties />} />
-      <Route path="/parties/:id" element={<PartyPage />} />
-      <Route path="/guests" element={<Guests />} />
-      <Route path="/checkin" element={<Checkin />} />
-      <Route path="/myaccount" element={<MyAccount />} />
+      <Route
+        path="/parties"
+        element={
+          <PrivateRoute>
+            <Parties />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/parties/:id"
+        element={
+          <PrivateRoute>
+            <PartyPage />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/guests"
+        element={
+          <PrivateRoute>
+            <Guests />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/checkin"
+        element={
+          <PrivateRoute>
+            <Checkin />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/myaccount"
+        element={
+          <PrivateRoute>
+            <MyAccount />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/logout"
+        element={
+          <PrivateRoute>
+            <Logout />
+          </PrivateRoute>
+        }
+      />
     </Routes>
   );
 }
