@@ -1,5 +1,6 @@
-import { isJsonString } from '../util/util-fuctions';
+import { ERROR_REQUEST_FROM_SERVER } from '../staticstrings/error';
 import { API_URL } from './api';
+import { throwNonFieldErrors } from './helpers';
 
 export async function registerUser({
   email,
@@ -63,15 +64,8 @@ export async function LoginUser({
       });
     })
     .catch(err => {
-      if (isJsonString(err.message)) {
-        const errorsFromApi = JSON.parse(err.message);
-        if ('non_field_errors' in errorsFromApi) {
-          throw new Error(errorsFromApi.non_field_errors[0]);
-        }
-      }
-      throw new Error(
-        'Não foi possível executar a requisição, tente novamente!',
-      );
+      throwNonFieldErrors(err);
+      throw new Error(ERROR_REQUEST_FROM_SERVER);
     });
   return login;
 }
