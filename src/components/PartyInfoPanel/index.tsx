@@ -24,14 +24,15 @@ export default function PartyInfoPanel() {
         const partyData = await getParty(id);
         setParty(partyData);
       };
-      // eslint-disable-next-line no-console
-      fetchData().catch(console.error);
+      fetchData().catch(() => {
+        setParty(undefined);
+      });
     }
   }, [id]);
 
   return (
     <div>
-      {id && (
+      {id && party && (
         <PartyInfoPanelContainer>
           <MainPanel>
             <div>
@@ -42,7 +43,7 @@ export default function PartyInfoPanel() {
               />
             </div>
             <div className="informations">
-              <h2>{party}</h2>
+              <h2>{party.name}</h2>
               <div>10/10/2022 - 10:00</div>
               <div>Palmas - TO</div>
               <p>50 Convidados</p>
@@ -73,7 +74,7 @@ export default function PartyInfoPanel() {
           <EventEditModal
             isOpen={isEventEditModalOpen}
             onRequestClose={handleCloseEventEditModal}
-            eventId={1}
+            partyId={1}
           />
         </PartyInfoPanelContainer>
       )}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getParties } from '../../services/useParty';
+import { getParties, searchParty } from '../../services/useParty';
 import { Party } from '../../types';
 import Item404 from '../Item404';
 import PartyItem from '../PartyItem';
@@ -17,16 +17,29 @@ export default function PartyList() {
       setParties(partiesData);
     };
     // eslint-disable-next-line no-console
-    const result = fetchData().catch(() => {
+    fetchData().catch(() => {
       setError('Não foi possível obter os dados, tente novamente!');
     });
   }, []);
+
+  useEffect(() => {
+    if (search !== '') {
+      const fetchData = async () => {
+        const partiesData = await searchParty(search);
+        setParties(partiesData);
+      };
+      fetchData().catch(err => {
+        setError(err.message);
+      });
+    }
+  }, [search]);
 
   return (
     <div>
       <SearchAndAddBar
         searchPlaceholder="Pesquisar Evento"
         imageAddPlaceholder="Novo Evento"
+        searchState={setSearch}
       />
       {error !== '' && (
         <Item404>

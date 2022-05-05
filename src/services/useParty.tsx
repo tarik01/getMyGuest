@@ -1,32 +1,63 @@
-import { Event, Guest } from '../types';
+import { getToken } from '../modules/userModel';
+import { Party, Guest } from '../types';
 import { API_URL } from './api';
+import { throwNonFieldErrors } from './helpers';
 
 export async function getParties() {
+  const token = `Token ${getToken()}`;
   const parties = await fetch(`${API_URL}/api/parties/`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Token ${localStorage.getItem('token')}`,
+      Authorization: token,
     },
   })
     .then(res => res.json())
-    .catch(() => {
+    .catch(err => {
+      throwNonFieldErrors(err);
+      throw new Error('Erro ao obter dados do servidor!');
+    });
+  return parties;
+}
+
+export async function searchParty(name: string) {
+  const token = `Token ${getToken()}`;
+  const parties = await fetch(`${API_URL}/api/parties/?search=${name}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+  })
+    .then(res => res.json())
+    .catch(err => {
+      throwNonFieldErrors(err);
       throw new Error('Erro ao obter dados do servidor!');
     });
   return parties;
 }
 
 export async function getParty(id: number | string) {
-  const party = await fetch(`${API_URL}/api/parties/${id}/`).then(res =>
-    res.json(),
-  );
+  const token = `Token ${getToken()}`;
+  const party = await fetch(`${API_URL}/api/parties/${id}/`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+  })
+    .then(res => res.json())
+    .catch(err => {
+      throwNonFieldErrors(err);
+      throw new Error('Erro ao obter dados do servidor!');
+    });
   return party;
 }
 
-export async function createEvent(event: Event) {
+export async function createParty(party: Party) {
   const response = await fetch(`${API_URL}/api/parties`, {
     method: 'POST',
-    body: JSON.stringify(event),
+    body: JSON.stringify(party),
     headers: {
       'Content-Type': 'application/json',
     },
@@ -34,10 +65,10 @@ export async function createEvent(event: Event) {
   return response;
 }
 
-export async function updateEvent(event: Event) {
-  const response = await fetch(`${API_URL}/api/parties/${event.id}`, {
+export async function updateParty(party: Party) {
+  const response = await fetch(`${API_URL}/api/parties/${party.id}`, {
     method: 'PUT',
-    body: JSON.stringify(event),
+    body: JSON.stringify(party),
     headers: {
       'Content-Type': 'application/json',
     },
@@ -52,8 +83,8 @@ export async function deleteEvent(id: number) {
   return response;
 }
 
-export async function addGuestOnEvent(event: Event, guest: Guest) {
-  const response = await fetch(`${API_URL}/api/parties/${event.id}/guests`, {
+export async function addGuestOnEvent(party: Party, guest: Guest) {
+  const response = await fetch(`${API_URL}/api/parties/${party.id}/guests`, {
     method: 'POST',
     body: JSON.stringify(guest),
     headers: {
