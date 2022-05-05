@@ -9,22 +9,11 @@ export interface Guest {
   events?: Event[];
 }
 
-export interface Event {
-  id: number;
-  title: string;
-  description?: string;
-  date: Date;
-  cover?: string;
-  location?: string;
-  locationUrl?: string;
-  guests?: Guest[];
-}
-
 export interface Checkin {
   id: number;
-  eventId: number;
-  guestId: number;
-  date: Date;
+  partyId: number;
+  guest: Guest;
+  checkInTime: Date;
   status?: string;
 }
 
@@ -39,7 +28,7 @@ export interface Party {
   image?: string;
   status?: number;
   type?: number;
-  guests?: Guest[];
+  checkins?: Checkin[];
   actionButton?: boolean;
   createdBy?: string;
 }
