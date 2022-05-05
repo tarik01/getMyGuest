@@ -42,8 +42,6 @@ export default function LoginPanel() {
       setError(err.message);
     });
     if (loginAction) {
-      // eslint-disable-next-line no-console
-      console.log(loginAction);
       userContext.setState({
         email,
         token: loginAction.token,
