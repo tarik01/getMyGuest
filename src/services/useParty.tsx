@@ -1,4 +1,5 @@
 import { getToken } from '../modules/userModel';
+import { ERROR_REQUEST_FROM_SERVER } from '../staticstrings/error';
 import { Party, Guest } from '../types';
 import { API_URL } from './api';
 import { throwNonFieldErrors } from './helpers';
@@ -15,7 +16,7 @@ export async function getParties() {
     .then(res => res.json())
     .catch(err => {
       throwNonFieldErrors(err);
-      throw new Error('Erro ao obter dados do servidor!');
+      throw new Error(ERROR_REQUEST_FROM_SERVER);
     });
   return parties;
 }
@@ -32,7 +33,7 @@ export async function searchParty(name: string) {
     .then(res => res.json())
     .catch(err => {
       throwNonFieldErrors(err);
-      throw new Error('Erro ao obter dados do servidor!');
+      throw new Error(ERROR_REQUEST_FROM_SERVER);
     });
   return parties;
 }
@@ -49,9 +50,26 @@ export async function getParty(id: number | string) {
     .then(res => res.json())
     .catch(err => {
       throwNonFieldErrors(err);
-      throw new Error('Erro ao obter dados do servidor!');
+      throw new Error(ERROR_REQUEST_FROM_SERVER);
     });
   return party;
+}
+
+export async function getPartyCheckins(id: number | string) {
+  const token = `Token ${getToken()}`;
+  const guests = await fetch(`${API_URL}/api/parties/${id}/checkins/`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+  })
+    .then(res => res.json())
+    .catch(err => {
+      throwNonFieldErrors(err);
+      throw new Error(ERROR_REQUEST_FROM_SERVER);
+    });
+  return guests;
 }
 
 export async function createParty(party: Party) {

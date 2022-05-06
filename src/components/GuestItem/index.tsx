@@ -4,45 +4,29 @@ import EditImg from '../../assets/images/actions/edit.svg';
 import DeleteImg from '../../assets/images/actions/delete.svg';
 import NoPhotoImg from '../../assets/images/icons/nophoto.png';
 import { Container } from './styles';
+import { Guest } from '../../types';
 
-interface Guest {
-  id?: number;
-  name: string;
-  email?: string;
-  phone?: string;
-  isGoing?: boolean;
-  cover?: string;
-  cpf?: string;
-  instagram?: string;
+interface GuestItemProps {
+  guest: Guest;
   actionButton?: boolean;
 }
 
-export default function GuestItem(guest: Guest) {
-  const {
-    id,
-    name,
-    email,
-    phone,
-    isGoing,
-    cover,
-    cpf,
-    instagram,
-    actionButton,
-  } = guest;
+export default function GuestItem(guestItem: GuestItemProps) {
+  const { guest, actionButton } = guestItem;
 
   return (
     <Container>
       <div className="picture">
         <img
-          src={cover || NoPhotoImg}
-          alt={`Foto de ${name}`}
+          src={guest.cover || NoPhotoImg}
+          alt={`Foto de ${guest.name}`}
           className="cover"
         />
       </div>
       <div className="informations">
         <div>
-          <h2>{name}</h2>
-          <p>CPF: {cpf}</p>
+          <h2>{guest.name}</h2>
+          <p>E-mail: {guest.email}</p>
           {actionButton && (
             <div className="action-buttons">
               <img

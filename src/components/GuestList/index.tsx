@@ -1,14 +1,31 @@
+import { useEffect, useState } from 'react';
 import DeleteImg from '../../assets/images/actions/delete.svg';
 import { List } from './styles';
 import GuestItem from '../GuestItem';
 import SearchAndAddBar from '../SearchAndAddBar';
+import { Checkin } from '../../types';
+import { getPartyCheckins } from '../../services/useParty';
 
-interface Props {
-  eventId?: number;
+interface GuestListProps {
+  // eslint-disable-next-line react/require-default-props
+  partyId?: number;
 }
 
-export default function GuestList(event: Props) {
-  const { eventId } = event;
+export default function GuestList({ partyId }: GuestListProps) {
+  const [checkins, setCheckins] = useState<Checkin[]>([]);
+
+  useEffect(() => {
+    if (partyId !== undefined) {
+      const fetchData = async () => {
+        const guestsData = await getPartyCheckins(partyId);
+        setCheckins(guestsData);
+      };
+      fetchData().catch(() => {
+        setCheckins([]);
+      });
+    }
+  }, [partyId]);
+
   return (
     <div>
       <SearchAndAddBar
@@ -16,21 +33,19 @@ export default function GuestList(event: Props) {
         imageAddPlaceholder="Adicionar Convidado"
       />
       <List>
-        <li>
-          {eventId && (
-            <img
-              src={DeleteImg}
-              alt="Remover Convidado da Lista"
-              data-tip="Remover Convidado da Lista"
-              className="remove-from-list"
-            />
-          )}
-          <GuestItem
-            name="Fulano da Silva"
-            cpf="000.000.000-00"
-            actionButton={!eventId}
-          />
-        </li>
+        {checkins.map(checkin => (
+          <li key={checkin.id}>
+            {partyId && (
+              <img
+                src={DeleteImg}
+                alt="Remover Convidado da Lista"
+                data-tip="Remover Convidado da Lista"
+                className="remove-from-list"
+              />
+            )}
+            <GuestItem guest={checkin.guest} actionButton={!partyId} />
+          </li>
+        ))}
       </List>
     </div>
   );
