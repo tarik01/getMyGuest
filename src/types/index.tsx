@@ -31,4 +31,5 @@ export interface Party {
   checkins?: Checkin[];
   actionButton?: boolean;
   createdBy?: string;
+  numberOfGuests?: number;
 }

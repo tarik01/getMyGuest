@@ -22,13 +22,18 @@ export const MainPanel = styled.div`
   font-size: var(--default);
   margin-bottom: 2rem;
 
-  .informations {
+  & .informations {
     text-align: center;
 
     & span {
       color: blue;
       cursor: pointer;
     }
+  }
+
+  & img {
+    width: 15rem;
+    height: 15rem;
   }
 `;
 

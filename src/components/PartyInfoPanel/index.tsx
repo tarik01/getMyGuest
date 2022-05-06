@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { getParty } from '../../services/useParty';
 import EventEditModal from '../EventEditModal';
 import { MainPanel, PartyInfoPanelContainer, DescriptionPanel } from './styles';
-import { Party } from '../../types';
+import { Guest, Party } from '../../types';
 
-export default function PartyInfoPanel() {
+export default function PartyInfoPanel({ partyId }: { partyId: number }) {
   const [isEventEditModalOpen, setIsEventEditModalOpen] = useState(false);
   const [party, setParty] = useState<Party>();
-  const { id } = useParams();
+  const [guests, setGuests] = useState<Guest[]>([]);
 
   const handleOpenEventEditModal = () => {
     setIsEventEditModalOpen(true);
@@ -19,34 +18,37 @@ export default function PartyInfoPanel() {
   };
 
   useEffect(() => {
-    if (id) {
-      const fetchData = async () => {
-        const partyData = await getParty(id);
+    if (partyId) {
+      const fetchDataParty = async () => {
+        const partyData = await getParty(partyId);
         setParty(partyData);
       };
-      fetchData().catch(() => {
+      fetchDataParty().catch(() => {
         setParty(undefined);
       });
     }
-  }, [id]);
+  }, [partyId]);
 
   return (
     <div>
-      {id && party && (
+      {partyId && party && (
         <PartyInfoPanelContainer>
           <MainPanel>
             <div>
               <img
-                src="https://picsum.photos/150/150"
-                alt="Foto de Fulano de Tal"
+                src={party.image}
+                alt={`Imagem do evento ${party.name}`}
                 className="rounded-circle"
               />
             </div>
             <div className="informations">
               <h2>{party.name}</h2>
-              <div>10/10/2022 - 10:00</div>
-              <div>Palmas - TO</div>
-              <p>50 Convidados</p>
+              <div>
+                {new Date(party.date).toLocaleDateString('pt-br')} -{' '}
+                {party.time}
+              </div>
+              <div>{party.location}</div>
+              <p>{party.numberOfGuests} Convidado(s)</p>
               <p>
                 <span
                   aria-hidden="true"
@@ -60,9 +62,9 @@ export default function PartyInfoPanel() {
           </MainPanel>
           <DescriptionPanel>
             <h2>Descrição</h2>
-            <p />
+            <p>{party.description}</p>
           </DescriptionPanel>
-          <DescriptionPanel>
+          {/* <DescriptionPanel>
             <h2>Localização</h2>
             <iframe
               title="Mapa de Localização"
@@ -70,11 +72,11 @@ export default function PartyInfoPanel() {
               %20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
               className="iframe"
             />
-          </DescriptionPanel>
+          </DescriptionPanel> */}
           <EventEditModal
             isOpen={isEventEditModalOpen}
             onRequestClose={handleCloseEventEditModal}
-            partyId={1}
+            partyId={party.id}
           />
         </PartyInfoPanelContainer>
       )}
