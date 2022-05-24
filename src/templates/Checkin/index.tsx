@@ -43,7 +43,7 @@ export default function Checkin() {
                 description="Festa lá em casa"
                 date={new Date()}
                 time=""
-                image="https://picsum.photos/360/360"
+                imageUrl="https://picsum.photos/360/360"
                 location="Palmas"
               />
               <span>
@@ -57,11 +57,7 @@ export default function Checkin() {
               {/* <button id="select_event">Selecionar Evento</button> */}
             </div>
             <div className="section-content selected">
-              <GuestItem
-                name="Fulano de Tal"
-                cpf="000.000.000-00"
-                cover="https://picsum.photos/360/360"
-              />
+              {/* <GuestItem guest="none" /> */}
               <span>
                 <img
                   src={EditImg}

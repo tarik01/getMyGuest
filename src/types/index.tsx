@@ -25,7 +25,7 @@ export interface Party {
   time: string;
   location?: string;
   locationUrl?: string;
-  image?: string;
+  imageUrl?: string;
   status?: number;
   type?: number;
   checkins?: Checkin[];

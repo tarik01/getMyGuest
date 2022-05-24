@@ -51,12 +51,12 @@ export default function PartyList() {
           {parties.map((party: Party) => (
             <li key={party.id}>
               <PartyItem
-                id={1}
+                id={party.id}
                 name={party.name}
                 description={party.description}
                 date={party.date}
                 time={party.time}
-                image={party.image}
+                imageUrl={party.imageUrl}
                 location={party.location}
                 actionButton
               />

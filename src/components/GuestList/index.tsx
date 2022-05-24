@@ -19,6 +19,7 @@ export default function GuestList({ partyId }: GuestListProps) {
       const fetchData = async () => {
         const guestsData = await getPartyCheckins(partyId);
         setCheckins(guestsData);
+        console.log('teste');
       };
       fetchData().catch(() => {
         setCheckins([]);

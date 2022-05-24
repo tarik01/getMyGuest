@@ -4,10 +4,11 @@ import OpenImg from '../../assets/images/actions/open.svg';
 import AddImg from '../../assets/images/actions/add-guest.svg';
 import ListImg from '../../assets/images/actions/list.svg';
 import DeleteImg from '../../assets/images/actions/delete.svg';
+import NoPhotoImg from '../../assets/images/icons/nophoto.png';
 import { Party } from '../../types';
 
 export default function PartyItem(party: Party) {
-  const { id, name, date, time, location, image, actionButton } = party;
+  const { id, name, date, time, location, imageUrl, actionButton } = party;
 
   const formatedDate = new Date(date).toLocaleDateString('pt-BR');
   const formatedTime = time.slice(0, 5);
@@ -15,7 +16,7 @@ export default function PartyItem(party: Party) {
   return (
     <PartyItemContainer>
       <div className="picture">
-        <img src={image} alt="title" />
+        <img src={imageUrl || NoPhotoImg} alt="title" />
       </div>
       <div className="informations">
         <h2>{name}</h2>

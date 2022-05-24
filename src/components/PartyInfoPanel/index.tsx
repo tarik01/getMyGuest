@@ -36,7 +36,7 @@ export default function PartyInfoPanel({ partyId }: { partyId: number }) {
           <MainPanel>
             <div>
               <img
-                src={party.image}
+                src={party.imageUrl}
                 alt={`Imagem do evento ${party.name}`}
                 className="rounded-circle"
               />
