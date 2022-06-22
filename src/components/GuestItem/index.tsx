@@ -5,6 +5,7 @@ import DeleteImg from '../../assets/images/actions/delete.svg';
 import NoPhotoImg from '../../assets/images/icons/nophoto.png';
 import { Container } from './styles';
 import { Guest } from '../../types';
+import { UTooltip } from '../Util';
 
 interface GuestItemProps {
   guest: Guest;
@@ -29,26 +30,18 @@ export default function GuestItem(guestItem: GuestItemProps) {
           <p>E-mail: {guest.email}</p>
           {actionButton && (
             <div className="action-buttons">
-              <img
-                src={OpenImg}
-                alt="Ver Dados do Convidado"
-                data-tip="Ver Dados do Convidado"
-              />
-              <img
-                src={EditImg}
-                alt="Editar dados do Convidado"
-                data-tip="Editar dados do Convidado"
-              />
-              <img
-                src={AddImg}
-                alt="Adicionar Convidado a Um Evento"
-                data-tip="Adicionar Convidado a Um Evento"
-              />
-              <img
-                src={DeleteImg}
-                alt="Deletar Convidado"
-                data-tip="Deletar Convidado"
-              />
+              <UTooltip content="Ver Dados do Convidado">
+                <img src={OpenImg} alt="Ver Dados do Convidado" />
+              </UTooltip>
+              <UTooltip content="Editar dados do Convidado">
+                <img src={EditImg} alt="Editar dados do Convidado" />
+              </UTooltip>
+              <UTooltip content="Adicionar Convidado a Um Evento">
+                <img src={AddImg} alt="Adicionar Convidado a Um Evento" />
+              </UTooltip>
+              <UTooltip content="Deletar Convidado">
+                <img src={DeleteImg} alt="Deletar Convidado" />
+              </UTooltip>
             </div>
           )}
         </div>

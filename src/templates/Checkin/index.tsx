@@ -8,6 +8,7 @@ import { CheckinContainer } from './styles';
 import PartyItem from '../../components/PartyItem';
 import GuestItem from '../../components/GuestItem';
 import ToggleSwitch from '../../components/ToggleSwitch';
+import { UTooltip } from '../../components/Util';
 
 export default function Checkin() {
   return (
@@ -22,11 +23,9 @@ export default function Checkin() {
             <div className="section-content">
               <div className="content-inside">
                 <input type="text" placeholder="Número do Check-In" />
-                <img
-                  src={ConfirmImg}
-                  alt="Confirmar Check-In"
-                  data-tip="Confirmar Check-In"
-                />
+                <UTooltip content="Confirmar Check-In">
+                  <img src={ConfirmImg} alt="Confirmar Check-In" />
+                </UTooltip>
               </div>
             </div>
           </div>
@@ -47,24 +46,26 @@ export default function Checkin() {
                 location="Palmas"
               />
               <span>
-                <img
-                  src={EditImg}
-                  alt="Alterar Evento"
-                  data-tip="Alterar Evento"
-                  className="icon-big"
-                />
+                <UTooltip content="Alterar Evento">
+                  <img
+                    src={EditImg}
+                    alt="Alterar Evento"
+                    className="icon-big"
+                  />
+                </UTooltip>
               </span>
               {/* <button id="select_event">Selecionar Evento</button> */}
             </div>
             <div className="section-content selected">
               {/* <GuestItem guest="none" /> */}
               <span>
-                <img
-                  src={EditImg}
-                  alt="Alterar Convidado"
-                  data-tip="Alterar Convidado"
-                  className="icon-big"
-                />
+                <UTooltip content="Alterar Convidado">
+                  <img
+                    src={EditImg}
+                    alt="Alterar Convidado"
+                    className="icon-big"
+                  />
+                </UTooltip>
               </span>
               {/* <button id="select_guest">Selecionar Convidado</button> */}
             </div>

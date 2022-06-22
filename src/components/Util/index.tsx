@@ -1,20 +1,19 @@
-import { TooltipContainer } from './style';
+import Tooltip from 'react-tooltip-lite';
 
-// https://codepen.io/AlicanErdurmaz/pen/QWjvmgr
 interface TooltipProps {
   children: React.ReactNode;
-  text: string;
-  // eslint-disable-next-line react/require-default-props
-  position?: string;
+  content: string;
 }
-export function Tooltip({ children, text, position = 'bottom' }: TooltipProps) {
+export function UTooltip({ children, content }: TooltipProps) {
   return (
-    <TooltipContainer
-      className="tooltip"
-      data-position={position}
-      data-tool-tip={text}
+    <Tooltip
+      content={content}
+      direction="down"
+      tagName="span"
+      className="target"
+      useDefaultStyles
     >
       {children}
-    </TooltipContainer>
+    </Tooltip>
   );
 }

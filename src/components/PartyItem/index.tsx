@@ -6,6 +6,7 @@ import ListImg from '../../assets/images/actions/list.svg';
 import DeleteImg from '../../assets/images/actions/delete.svg';
 import NoPhotoImg from '../../assets/images/icons/nophoto.png';
 import { Party } from '../../types';
+import { UTooltip } from '../Util';
 
 export default function PartyItem(party: Party) {
   const { id, name, date, time, location, imageUrl, actionButton } = party;
@@ -28,28 +29,24 @@ export default function PartyItem(party: Party) {
         {actionButton && (
           <div className="action-buttons">
             <Link to={`/parties/${id}`}>
-              <img src={OpenImg} alt="Ver Evento" data-tip="Ver Evento" />
+              <UTooltip content="Ver Evento">
+                <img src={OpenImg} alt="Ver Evento" />
+              </UTooltip>
             </Link>
             <Link to={`/event${{ id }}`}>
-              <img
-                src={ListImg}
-                alt="Ver Lista de Convidados"
-                data-tip="Ver Lista de Convidados"
-              />
+              <UTooltip content="Ver Lista de Convidados">
+                <img src={ListImg} alt="Ver Lista de Convidados" />
+              </UTooltip>
             </Link>
             <Link to="/event">
-              <img
-                src={AddImg}
-                alt="Adicionar Convidado(s)"
-                data-tip="Adicionar Convidado(s)"
-              />
+              <UTooltip content="Adicionar Convidado(s)">
+                <img src={AddImg} alt="Adicionar Convidado(s)" />
+              </UTooltip>
             </Link>
             <Link to="/event">
-              <img
-                src={DeleteImg}
-                alt="Deletar Evento"
-                data-tip="Deletar Evento"
-              />
+              <UTooltip content="Deletar Evento">
+                <img src={DeleteImg} alt="Deletar Evento" />
+              </UTooltip>
             </Link>
           </div>
         )}

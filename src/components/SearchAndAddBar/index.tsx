@@ -1,6 +1,6 @@
 import { Container } from './styles';
 import AddImg from '../../assets/images/actions/add.svg';
-import { Tooltip } from '../Util';
+import { UTooltip } from '../Util';
 
 interface SearchAndAddBarProps {
   searchPlaceholder: string;
@@ -27,13 +27,9 @@ export default function SearchAndAddBar(search: SearchAndAddBarProps) {
         }}
       />
       {imageAddPlaceholder && (
-        <Tooltip text={imageAddPlaceholder}>
-          <img
-            src={AddImg}
-            alt={imageAddPlaceholder}
-            // data-tip={imageAddPlaceholder}
-          />
-        </Tooltip>
+        <UTooltip content={imageAddPlaceholder}>
+          <img src={AddImg} alt={imageAddPlaceholder} />
+        </UTooltip>
       )}
     </Container>
   );

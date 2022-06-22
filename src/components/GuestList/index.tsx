@@ -5,6 +5,7 @@ import GuestItem from '../GuestItem';
 import SearchAndAddBar from '../SearchAndAddBar';
 import { Checkin } from '../../types';
 import { getPartyCheckins } from '../../services/useParty';
+import { UTooltip } from '../Util';
 
 interface GuestListProps {
   // eslint-disable-next-line react/require-default-props
@@ -37,12 +38,11 @@ export default function GuestList({ partyId }: GuestListProps) {
         {checkins.map(checkin => (
           <li key={checkin.id}>
             {partyId && (
-              <img
-                src={DeleteImg}
-                alt="Remover Convidado da Lista"
-                data-tip="Remover Convidado da Lista"
-                className="remove-from-list"
-              />
+              <div className="remove-from-list">
+                <UTooltip content="Remover Convidado da Lista">
+                  <img src={DeleteImg} alt="Remover Convidado da Lista" />
+                </UTooltip>
+              </div>
             )}
             <GuestItem guest={checkin.guest} actionButton={!partyId} />
           </li>
